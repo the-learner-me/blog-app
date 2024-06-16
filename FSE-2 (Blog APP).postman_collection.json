@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "47e434e2-d13f-41bf-afa2-d151c1681bb8",
+		"name": "FSE-2 (Blog APP)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"navya\",\r\n    \"email\":\"navya@gmail.com\",\r\n    \"firstName\":\"navya\",\r\n    \"lastName\":\"g\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW5ha2FAZ21haWwuY29tIiwiaWF0IjoxNzE4NTM4ODEzLCJleHAiOjE3MTg2MjUyMTN9.c77oAo_1nnjS0ey-AKx56z_3y92QINriqWQxrL307TFe3hFoDgVS7TfNN2nZT64s_etaYIau4ny5QZaBfWEZNA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"menaka@gmail.com\",\r\n    \"firstName\":\"menaka\",\r\n    \"lastName\":\"g\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"menaka\",\r\n    \"email\":\"menaka@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXZ5YUBnbWFpbC5jb20iLCJpYXQiOjE3MTg1Mzg2NzEsImV4cCI6MTcxODYyNTA3MX0.JYBB53C6l47ZriQp0hnt5mELlJ6uyCtdzyDnDNj3cuCoq_usaxTqfXdC90qQjDgtFe2AF4jGwv_p5LlrOXipZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"categoryId\":\"1\",\r\n  \"content\":\"Climate change refers to long-term shifts in temperatures and weather patterns. Such shifts can be natural, due to changes in the sun’s activity or large volcanic eruptions. But since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas. Burning fossil fuels generates greenhouse gas emissions that act like a blanket wrapped around the Earth, trapping the sun’s heat and raising temperatures.\",\r\n  \"title\":\"climate change\",\r\n  \"userEmail\":\"navya@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/blogs",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count by category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW5ha2FAZ21haWwuY29tIiwiaWF0IjoxNzE4NTE5MjAyLCJleHAiOjE3MTg2MDU2MDJ9.269yMVmCTjLWe5SRksJbUnFRpRhS3esYTMPTXj61vr02_vScHlN6Xph0eaczv4S0DXALHRGgEmGwodQax8yydA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"categoryId\":\"1\",\r\n  \"content\":\"Climate change refers to long-term shifts in temperatures and weather patterns. Such shifts can be natural, due to changes in the sun’s activity or large volcanic eruptions. But since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas. Burning fossil fuels generates greenhouse gas emissions that act like a blanket wrapped around the Earth, trapping the sun’s heat and raising temperatures.\",\r\n  \"title\":\"climate change\",\r\n  \"userEmail\":\"menaka@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/blogs/count-by-category",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"blogs",
+						"count-by-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all blogs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW5ha2FAZ21haWwuY29tIiwiaWF0IjoxNzE4NTE5MjAyLCJleHAiOjE3MTg2MDU2MDJ9.269yMVmCTjLWe5SRksJbUnFRpRhS3esYTMPTXj61vr02_vScHlN6Xph0eaczv4S0DXALHRGgEmGwodQax8yydA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"categoryId\":\"1\",\r\n  \"content\":\"Climate change refers to long-term shifts in temperatures and weather patterns. Such shifts can be natural, due to changes in the sun’s activity or large volcanic eruptions. But since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas. Burning fossil fuels generates greenhouse gas emissions that act like a blanket wrapped around the Earth, trapping the sun’s heat and raising temperatures.\",\r\n  \"title\":\"climate change\",\r\n  \"userEmail\":\"menaka@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/blogs",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blog by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW5ha2FAZ21haWwuY29tIiwiaWF0IjoxNzE4NTE5MjAyLCJleHAiOjE3MTg2MDU2MDJ9.269yMVmCTjLWe5SRksJbUnFRpRhS3esYTMPTXj61vr02_vScHlN6Xph0eaczv4S0DXALHRGgEmGwodQax8yydA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"categoryId\":\"1\",\r\n  \"content\":\"Climate change refers to long-term shifts in temperatures and weather patterns. Such shifts can be natural, due to changes in the sun’s activity or large volcanic eruptions. But since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels like coal, oil and gas. Burning fossil fuels generates greenhouse gas emissions that act like a blanket wrapped around the Earth, trapping the sun’s heat and raising temperatures.\",\r\n  \"title\":\"climate change\",\r\n  \"userEmail\":\"menaka@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/blogs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"blogs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blog by user email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYXZ5YUBnbWFpbC5jb20iLCJpYXQiOjE3MTg1Mzg2NzEsImV4cCI6MTcxODYyNTA3MX0.JYBB53C6l47ZriQp0hnt5mELlJ6uyCtdzyDnDNj3cuCoq_usaxTqfXdC90qQjDgtFe2AF4jGwv_p5LlrOXipZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/blogs/user",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"blogs",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW5ha2FAZ21haWwuY29tIiwiaWF0IjoxNzE4NTM3NjM2LCJleHAiOjE3MTg2MjQwMzZ9.MyCBzV5sQDuBwS31mQDQhrUFWkhiL8PR0sd7EBdudeOji8_M8sxyERpFglyc4_qT9VEqtRPVXdfEBvJoo-fKdg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/api/blogs/2",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"blogs",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
